@@ -481,3 +481,25 @@ span.time{
         align-items: center;
     }
 }
+
+
+
+
+
+
+
+/* tansition in primary btn */
+
+
+
+
+/* transition in sidebar */
+.active, .nav-item:hover{
+    background-color: #DD0000;
+    transition: background-color .5s ease-in;
+    
+}
+
+.active a{
+    color: #ffffff;
+}
