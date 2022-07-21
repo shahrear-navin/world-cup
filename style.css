@@ -81,7 +81,7 @@ body{
     max-width: 1321px;
     margin: 50px auto;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas: 
         "sidebar blog1 blog2 blog3"
@@ -317,6 +317,66 @@ span.time{
     
 }
 
+/* Group page css */
+
+table{
+    width: 800px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    background: linear-gradient(45deg, #49a09d, #5f2c82);
+}
+
+th, td{
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+th{
+    text-align: left;
+}
+
+thead th{
+    background-color: #55608f;
+}
+
+tbody tr:hover{
+    background-color: rgba(255,255,255,0.3);
+}
+
+tbody td{
+    position: relative;
+}
+
+/* media queries for small screen desktop */
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px){
+    .main-header{
+        max-width: 1100px;
+    }
+
+    .main-container{
+        max-width: 1100px;
+        grid-gap: 5px;
+
+    }
+
+    .nav-sidebar{
+        width: 210px;
+        height: 290px;
+    }
+    .card{
+        width: 290px;
+        height: 362px;
+        
+    }
+    
+    .card-image img{
+        width: 291px;
+    }
+}
+
 
 /* media queries for tablet view */
 
@@ -480,17 +540,53 @@ span.time{
         flex-direction: column;
         align-items: center;
     }
+
+    table{
+        width: 100px;
+    
+    }
 }
-
-
-
 
 
 
 
 /* tansition in primary btn */
 
+.slide{
+    background: #833ab4;
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+}
 
+.slide a {
+    position: relative;
+    z-index: 2;
+    color: white;
+  }
+  
+
+.slide:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ff1ead;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+    border-radius: 4px;
+}
+  
+.slide:hover {
+    color: white;
+}
+  
+.slide:hover:after {
+    width: 100%;
+}
 
 
 /* transition in sidebar */
@@ -503,3 +599,5 @@ span.time{
 .active a{
     color: #ffffff;
 }
+
+
